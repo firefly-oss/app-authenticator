@@ -1,0 +1,64 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: app-orchestrator
+  config:
+    import: "optional:configserver:http://localhost:8888"
+
+  cloud:
+    gateway:
+      routes:
+        - id: distributor-domain-branding
+          uri: ${endpoints.common.common-platform-distributor-mgmt}
+          predicates:
+            - Path=/api/v1/distributors/*/branding/**
+
+        - id: distributor-domain-catalog
+          uri: ${endpoints.common.common-platform-product-mgmt}
+          predicates:
+            - Path=/api/v1/distributors/*/products/**
+
+        - id: lending-domain-loan-origination
+          uri: ${endpoints.core.core-lending-loan-origination}
+          predicates:
+            - Path=/api/v1/loan-applications/**
+
+        - id: lending-domain-loan-servicing
+          uri: ${endpoints.core.core-lending-loan-servicing}
+          predicates:
+            - Path=/api/v1/loans/**
+
+        - id: product-domain-product-catalog
+          uri: ${endpoints.domain.product-domain-product-catalog}
+          predicates:
+            - Path=/api/v1/products/**
+
+        - id: customer-domain-people
+          uri: ${endpoints.domain.customer-domain-people}
+          predicates:
+            - Path=/api/v1/businesses/**
+            - Path=/api/v1/customers/**
+            - Path=/api/v1/party-relationships/**
+
+        - id: product-domain-pricing
+          uri: ${endpoints.domain.product-domain-pricing}
+          predicates:
+            - Path=/api/v1/pricing/eligibility/**
+            - Path=/api/v1/pricing/fees/**
+            - Path=/api/v1/pricing/**
+
+        - id: customer-domain-kyc-kyb
+          uri: ${endpoints.domain.customer-domain-kyc-kyb}
+          predicates:
+            - Path=/api/v1/kyb/**
+            - Path=/api/v1/kyc/**
+
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
