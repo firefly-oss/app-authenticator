@@ -1,0 +1,17 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: app-authenticator
+
+  cloud:
+    gateway:
+      filter:
+        json-to-grpc:
+          enabled: false
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
