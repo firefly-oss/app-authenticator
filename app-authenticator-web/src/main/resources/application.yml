@@ -1,17 +1,10 @@
-server:
-  port: 8088
-
 spring:
   application:
     name: app-authenticator
-
-  cloud:
-    gateway:
-      filter:
-        json-to-grpc:
-          enabled: false
-
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-
+    version: 1.0.0
+    description: Authenticator Application
+    team:
+      name: Firefly Software Solutions Inc
+      email: dev@getfirefly.io
+  config:
+    import: "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
