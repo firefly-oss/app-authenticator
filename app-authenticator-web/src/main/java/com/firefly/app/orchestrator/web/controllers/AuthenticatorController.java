@@ -1,7 +1,7 @@
 package com.firefly.app.orchestrator.web.controllers;
 
-import com.firefly.common.application.config.DomainPassthrough;
-import com.firefly.common.application.config.DomainPassthroughs;
+import org.fireflyframework.application.config.DomainPassthrough;
+import org.fireflyframework.application.config.DomainPassthroughs;
 import org.springframework.stereotype.Component;
 
 @Component
