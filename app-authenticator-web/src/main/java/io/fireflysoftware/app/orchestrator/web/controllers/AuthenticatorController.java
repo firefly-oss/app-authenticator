@@ -1,4 +1,4 @@
-package com.firefly.app.orchestrator.web.controllers;
+package io.fireflysoftware.app.orchestrator.web.controllers;
 
 import org.fireflyframework.common.application.config.DomainPassthrough;
 import org.fireflyframework.common.application.config.DomainPassthroughs;

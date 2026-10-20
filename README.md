@@ -71,7 +71,7 @@ app-authenticator/
 └── app-authenticator-web/
     ├── pom.xml                          # Web module POM
     └── src/main/
-        ├── java/com/firefly/app/orchestrator/web/
+        ├── java/io/fireflysoftware/app/orchestrator/web/
         │   ├── AppAuthenticatorApplication.java      # Spring Boot entry point
         │   ├── GatewaySecurityConfig.java            # WebFlux security config
         │   └── controllers/

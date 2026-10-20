@@ -1,4 +1,4 @@
-package com.firefly.app.orchestrator.web;
+package io.fireflysoftware.app.orchestrator.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
