@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>app-authenticator-web</artifactId>
+    <name>app-authenticator-web</name>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>

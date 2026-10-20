@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>app-authenticator-interfaces</artifactId>
+    <name>app-authenticator-interfaces</name>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>

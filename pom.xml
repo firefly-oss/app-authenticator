@@ -12,6 +12,7 @@
     </parent>
 
     <artifactId>app-authenticator</artifactId>
+    <name>app-authenticator</name>
     <version>26.10.3</version>
     <packaging>pom</packaging>
     <modules>
